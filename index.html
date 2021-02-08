@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Radek Nycz</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+  <body onload="getYear()">
+    <div class="navbar">
+        <a href="javascript:void(0);" onclick="openPortfolio()">Portfolio</a>
+        <a href="javascript:void(0);" onclick="openAboutMe()">O mnie</a>
+        <a href="javascript:void(0);" onclick="openSkills()">Umiejętności</a>
+        <a href="javascript:void(0);" onclick="openProjects()">Projekty</a>
+        <a href="javascript:void(0);" onclick="openContact()">Kontakt</a>
+        <span class="mobile-button" onclick="openMobile()">&#9776;</span>
+        <div class="copyright">
+            <a href="https://github.com/rnycz"><i class="fab fa-github"></i></a>           
+            <p id="year1"></p>
+            &copy; Radosław Nycz
+        </div>
+    </div>
+    <div id="mobile" class="mobile-nav">
+        <a href="javascript:void(0)" class="closebtn-mobile" onclick="closeMobile()">&times;</a>
+        <div class="mobile-nav-content">
+          <a href="javascript:void(0);" class="isClicked" onclick="openPortfolio()">Portfolio</a>
+          <a href="javascript:void(0);" class="isClicked" onclick="openAboutMe()">O mnie</a>
+          <a href="javascript:void(0);" class="isClicked" onclick="openSkills()">Umiejętności</a>
+          <a href="javascript:void(0);" class="isClicked" onclick="openProjects()">Projekty</a>
+          <a href="javascript:void(0);" class="isClicked" onclick="openContact()">Kontakt</a>
+        </div>
+      </div>
+      <div class="wrapper">
+        <div id="aboutme" style="display: none;">
+          <h2>Kilka słów o mnie</h2>
+          <div class="aboutme-container">
+            <p>Nazywam się Radek&#128578;aktualnie jestem studentem trzeciego roku na
+              Uniwersytecie Ekonomicznym w Katowicach. Studiuję Informatykę i ekonometrię
+              ze specjalnością biznes elektroniczny. Z programowaniem
+              mam styczność od szkoły średniej. W technikum zdobyłem pierwsze umiejętności,
+              zaczynając od tworzenia stron internetowych czy programowania w języku C++. &#128187;
+              Na studiach poszerzam swoją wiedzę, a także uczę się nowych rzeczy takich jak, np.
+              języka C#. Ponadto analizowanie danych szczególnie tych związanych z analityką webową,
+              także nie jest mi obce o czym świadczy znajomość Google Analytics. W swojej pracy
+              staram się być sumienny oraz realizować dokładnie to co sobie zaplanowałem.<br />
+              Moim hobby jest sport&#128293;zarówno jego ogląddanie jak i uprawianie.
+              Przede wszystkim są to sporty drużynowe - piłka nożna, koszykówka, siatkówka, ale
+              też indywidualne jak lekkoatletyka. Poza sportami fizycznymi przyjemność przynoszą
+              mi też sporty umysłowe jak szachy.
+            </p>
+          </div>
+        </div>
+        <div id="skills" style="display: none;">
+          <h2>Umiejętności</h2>
+          <div class="row">
+            <div class="skills-list">
+              <ul class="skills-square">
+                <li>HTML5, CSS3, RWD</li>
+                <li>.NET/C# (WPF, WinForms, .NET MVC)</li>
+                <li>SQL (MS SQL Database), JavaScript, Git</li>
+                <li>Node.js</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="skills-icons">
+              <i class="fab fa-html5"></i>
+              <i class="fab fa-css3-alt"></i>
+              <i class="fab fa-js-square"></i>
+            </div> 
+          </div>
+          <div class="row">
+            <div class="personal-icons">
+              <i class="fas fa-users"></i>
+              <p>Praca w zespole</p>
+            </div>
+            <div class="personal-icons">
+              <i class="fas fa-brain"></i>
+              <p>Analityczne myślenie</p>   
+            </div>
+            <div class="personal-icons">
+              <i class="fas fa-book-open"></i>
+              <p>Szybkie uczenie się</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="cert">
+              <p>Certyfikat Google Analytics</p>
+              <img src="images/cert-analytics.PNG" class="skills-image" alt="certyfikat Google Analytics">
+            </div>
+            <div class="cert">
+              <p>Język angielski B1/B2</p>
+              <img src="images/cert-eng.PNG" class="skills-image" alt="certyfikat język angielski">
+            </div>
+          </div>
+          <div id="skills-modal">
+            <span class="close-modal" onclick="closeModalSkills()">&times;</span>       
+            <img class="skills-modal-container" id="cert">
+            <div id="desc-cert"></div>
+          </div>     
+        </div>
+        <div id="projects" style="display: none;">
+          <div class="row">
+            <h2>WEB</h2>
+          <div class="projects-column">
+            <p>Responsywna strona internetowa pizzerii<br />
+            Zastosowane technologie: HTML, CSS, JavaScript</p>
+            <img class="projects-image" src="images/pizzeron.PNG"
+            alt="https://github.com/rnycz/Pizzeron-website"
+            style="width: 100%; max-width: 300px;"> 
+          </div>
+          <div class="projects-column">
+            <p>Aplikacja internetowa do zarządzania magazynem<br />
+            Zastosowane technologie: .NET MVC, C#, HTML, JavaScript</p>
+            <img class="projects-image" src="images/warehouse.PNG"
+            alt="https://github.com/rnycz/WebApp" style="width: 100%; max-width: 300px;"> 
+          </div>
+          </div>
+          <div class="row">
+            <h2 style="padding-top: 50px;">.NET/C#</h2>
+          <div class="projects-column">
+            <p>Aplikacja desktopowa - stwórz konto, graj i zdobywaj punkty<br />
+            Zastosowane technologie: C#, WinForms, MS SQL Database</p>
+            <img class="projects-image" src="images/forfunapp.PNG"
+            alt="https://github.com/rnycz/ForFunApp"
+            style="width: 100%; max-width: 300px;"> 
+          </div>
+          <div class="projects-column">
+            <p>Po prostu Snake<br />
+            Zastosowane technologie: C#, WinForms</p>
+            <img class="projects-image" src="images/snake.PNG"
+            alt="https://github.com/rnycz/Snake" style="width: 100%; max-width: 180px;"> 
+          </div>
+          </div>
+          <div class="row">
+            <p></p>
+          <div class="projects-column">
+            <p>Aplikacja desktopowa do przeglądania zdjęć<br />
+            Zastosowane technologie: WPF, C#</p>
+            <img class="projects-image" src="images/image-gallery.PNG"
+            alt="https://github.com/rnycz/Image-Gallery"
+            style="width: 100%; max-width: 300px;"> 
+          </div>
+          <div class="projects-column">
+            <p>Aplikacja desktopowa do obsługi haseł<br />
+            Zastosowane technologie: C#, WPF, MS SQL Database</p>
+            <img class="projects-image" src="images/password-gen.PNG"
+            alt="https://github.com/rnycz/PasswordGenerator" style="width: 100%; max-width: 300px;"> 
+          </div>
+          </div>
+          <h3>Więcej na moim profilu <a href="https://github.com/rnycz" target="_blank">GitHub</a></h3>            
+
+          <div id="projects-modal">
+            <span class="close-modal" onclick="closeModalProjects()">&times;</span>       
+            <img class="projects-modal-container" id="image">
+            <div id="desc-image"></div>
+          </div>
+        </div>
+        <div id="contact" style="display: none; margin-bottom: 50px;">
+          <h2>Kontakt</h2>   
+          <div class="contact-container">
+            <a href="mailto:radeknycz98@gmail.com"><i class="fa fa-envelope"></i></a><br />
+            radeknycz98@gmail.com<br />
+            <a href="https://github.com/rnycz" target="_blank"><i class="fab fa-github"></i></a><br />
+            GitHub  
+          </div>
+        </div>
+        <div id="content">
+          <h1>HELLO</h1>         
+          <h2>Radosław Nycz</h2>
+          <p><i>Junior Frontend Developer</i></p>
+          <p><i>Junior .NET Developer</i></p>
+        </div>
+      </div>
+    <div class="mobile-copyright">
+      <span id="year2"></span>
+      &copy; Radosław Nycz
+    </div>
+  </body>
+ 
+</html>
