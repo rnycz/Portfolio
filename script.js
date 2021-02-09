@@ -114,4 +114,3 @@ function closeModalSkills(){
     modal.style.display = "none";
 }
 
-  
