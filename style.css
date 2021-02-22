@@ -38,6 +38,24 @@ body {
   min-height: 100%;
   padding-bottom: 10px;
 }
+.graphic-box{
+  height: 800px;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  overflow: hidden;
+}
+.graphic-block{
+  position: absolute;
+    width: 1263px;
+    height: 1000px;
+    border-radius: 40px;
+    top: -1000px;
+    left: 90px;
+    background: rgb(36, 36, 36);
+    box-shadow: 0 11px 70px rgb(36, 36, 36);
+    transform: matrix(-1.66,1.12,-2.69,-0.60,-55,100);
+}
 /*navbar start*/
 .navbar{
     width: 15%;
@@ -150,7 +168,6 @@ body {
     height: auto;
     margin-left: 15%;
     text-align: center;
-    background-color: rgb(15, 15, 15);;
     color: white; 
 }
 
@@ -526,6 +543,9 @@ body {
       height: auto;
       position: relative;
       border-right: none;
+    }
+    .graphic-box{
+      display: none;
     }
     .copyright{
         display: none;
