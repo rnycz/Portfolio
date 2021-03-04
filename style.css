@@ -52,8 +52,7 @@ body {
     border-radius: 40px;
     top: -1000px;
     left: 90px;
-    background: rgb(36, 36, 36);
-    box-shadow: 0 11px 70px rgb(36, 36, 36);
+    background: rgb(31, 31, 31);
     transform: matrix(-1.66,1.12,-2.69,-0.60,-55,100);
 }
 /*navbar start*/
@@ -421,7 +420,7 @@ body {
   border-radius: 5px;
   padding: 15px;
   text-decoration: none;
-  color: rgb(233, 233, 233);
+  color: white;
   width: fit-content;
 }
 #desc-image a:hover{
