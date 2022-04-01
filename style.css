@@ -410,7 +410,7 @@ body {
   display: block;
   width: 80%;
   max-width: 900px;
-  max-height: 700px;
+  max-height: 1000px;
   border-radius: 5px;
 }
 #desc-image a{
