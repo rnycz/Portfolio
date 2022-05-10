@@ -1,0 +1,687 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+    font-size: 100%;
+}
+body {
+  background-color: rgb(15, 15, 15);
+  font-family: 'Montserrat', sans-serif;
+  margin: auto;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px gray; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: orange; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background:rgb(196, 127, 1);
+}
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.wrapper{
+  min-height: 100%;
+  padding-bottom: 10px;
+}
+.graphic-box{
+  height: 800px;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  overflow: hidden;
+  .graphic-block{
+    position: absolute;
+    width: 1263px;
+    height: 1000px;
+    border-radius: 40px;
+    top: -1000px;
+    left: 90px;
+    background: rgb(31, 31, 31);
+    transform: matrix(-1.66,1.12,-2.69,-0.60,-55,100);
+  }
+}
+
+/*navbar start*/
+.navbar{
+    width: 15%;
+    background-color: rgb(15, 15, 15);
+    text-align: center;
+    position: fixed;
+    height: 100%;
+    overflow:hidden;
+    border-right: 1px solid gray;
+    z-index: 1;
+    animation: slide-navbar 1s 1;
+    a{
+        color: white;
+        background-color: rgb(48, 46, 46);
+        margin: 0;
+        display: block;
+        padding: 15px;
+        font-size: 1.2rem;
+        text-decoration: none;
+        width: 100%;
+        transition: 0.6s;
+        animation: slide-navbar-font 1s 1;
+        &:hover{
+            background-color:  rgb(15, 15, 15);
+            color: orange;
+            transition: 0.6s;
+        }
+    }
+}
+.mobile-button {
+    font-size: 50px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(15, 15, 15);;
+    display: none;
+    text-align: center;
+}
+
+.mobile-nav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    overflow-x: hidden;
+    transition: 0.5s;
+    .closebtn-mobile {
+        position: absolute;
+        top: 20px;
+        right: 45px;
+        font-size: 60px;
+    }
+    a {
+        padding: 8px;
+        text-decoration: none;
+        font-size: 36px;
+        color: white;
+        display: block;
+        transition: 0.5s;
+        &:hover{
+            color: rgb(65, 63, 63);
+        }
+    }
+    .mobile-nav-content {
+        position: relative;
+        top: 25%;
+        width: 100%;
+        text-align: center;
+        margin-top: 30px;
+    }
+}
+/*navbar end*/
+
+/*copyright start*/
+.copyright{
+    color: white;
+    font-size: 0.9rem;
+    clear: both;
+    width:100%;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5px;
+    .fab {
+        font-size: 3rem;
+        color: white;
+        &:hover{
+            color:orange;
+            transition: 0.5s;
+        }
+    }
+}
+.mobile-copyright{
+  display: none;
+  border-top: 1px solid gray;
+  text-align: center;
+  font-size: 0.8rem;
+  height: 30px;
+  padding-top: 5px;
+  color: white;
+  margin-top: 40px;
+}
+/*copyright end*/
+#content, #aboutme, #skills, #projects, #contact{
+    height: auto;
+    margin-left: 15%;
+    text-align: center;
+    color: white; 
+}
+
+@keyframes slide-contact-box{
+  0%{
+    box-shadow: none;
+    margin: 0px auto 20px auto;
+  }
+  100%{
+    box-shadow: 0px 0px 30px 5px orange;
+    margin: 120px auto 20px auto;
+  }
+}
+@keyframes slide-contact-header{
+  0%{
+    padding-top: 0;
+    font-size: 0rem;
+  }
+  100%{
+    padding-top: 50px;
+    font-size: 3rem;
+  }
+}
+@keyframes slide-navbar{
+  0%{
+    width: 0%;
+  }
+  100%{
+    width: 15%;
+  }
+}
+@keyframes slide-navbar-font{
+  0%{
+    font-size: 0;
+  }
+  100%{
+    font-size: 1.2rem;
+  }
+}
+//TODO /////////////////////////////////////////////////////////
+/*Content start*/
+#content{
+  h1{
+    margin: 0;
+    padding: 50px;
+    font-family: 'Sriracha', cursive;
+    font-size: 16rem;
+    animation: fade-in-down 2s 1;
+  }
+  h2{
+    font-family: 'Caveat', cursive;
+    font-size: 5rem;
+    animation: type-text 3.5s steps(29,end) 1.8s 1 normal both,
+    type-cursor 700ms steps(29,end) infinite,
+    fade-in-down 2s 1;
+    margin: auto;
+    border-right: 0.4rem solid orange;
+    overflow: hidden;
+    letter-spacing: 0.3rem;
+    white-space: nowrap;
+  }
+  p{
+    font-size: 1.5rem;
+    visibility: hidden;
+    animation: fade-in-up 2s 5.2s 1 forwards;
+  }
+} 
+/*Content end*/
+
+/*About me start*/
+#aboutme{
+  h2{
+    margin: 0;
+    padding-top: 50px; 
+    font-size: 3rem;
+    animation: slide-contact-header 0.8s 1;
+  }
+  p{
+    padding: 50px;
+    text-align: justify;
+    line-height: 2rem;
+  }
+}
+.aboutme-container{
+  margin: 120px auto 70px auto;
+  width: 50rem;
+  height: auto;
+  font-size: 1.2rem;
+  color: white;
+  border-radius: 20px;
+  background-color: rgb(48, 46, 46);
+  box-shadow: 0px 0px 30px 5px orange;
+  animation: slide-contact-box 0.8s 1; 
+}
+/*About me end*/
+
+/*Skills start*/
+#skills{
+  animation: fade-in-down 1s 1;
+  h2{
+    margin: 0;
+    padding-top: 50px; 
+    font-size: 3rem;
+  }
+}
+.skills-square{
+  counter-reset: list-counter;
+  list-style: none;
+  float:left;
+  margin: 5rem 5rem 5rem 10rem;
+  text-align: left;
+  font-size: 1.4rem;
+  li{
+    margin: 1.5rem 0;
+    &::before{
+      content: counter(list-counter);
+      counter-increment: list-counter;
+      width: 2rem;
+      height: 1.77rem;
+      padding: 1rem;
+      margin-right: 1rem;
+      border: 0.2em solid white;
+      background: #000; 
+      display: inline-block;
+      text-align: center; 
+    }   
+  }
+} 
+.skills-list{
+  width: 100%;
+  float: left;
+}
+.skills-icons{
+  font-size: 10rem;
+  float: left;
+  width: 100%;
+  text-align: center;
+  i:hover{
+    color: orange;
+  }
+}
+.personal-icons {
+  width: 33.3%;
+  margin-top: 70px;
+  float: left;
+  i{
+    font-size: 5rem;
+    &:hover{
+      color: orange;
+    }
+  }
+}
+.cert{
+  width: 50%;
+  float: left;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  position: relative;
+  img{
+    width: 200px;
+    height: 250px;
+    border: 2px solid gray;
+    cursor: pointer;
+    transition: 0.3s;
+    &:hover{
+      opacity: 0.6;
+    }
+  }
+}
+ 
+#skills-modal{
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9);
+}
+.skills-modal-container{
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 5px;
+}
+#desc-cert{
+  margin: 20px;
+}
+.skills-modal-container, #desc-cert{
+  animation: zoom-image 0.6s 1;
+}
+/*Skills end*/
+
+/*Projects modal start*/
+.projects-column{
+  float: left;
+  width: 50%;
+  p{
+    padding: 5px 30px 0 30px;
+  }
+}
+#projects{
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  animation: fade-in-down 1s 1;
+  h2{
+    font-size: 2rem;
+    margin: 0;
+    padding: 50px;
+  }
+  h3 a{
+    color: white;
+    &:hover{
+      color: orange;
+    }
+  }
+}
+.click-info{
+  font-size: 1rem;
+  padding-top: 20px;
+}
+.projects-image {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover{
+    opacity: 0.6;
+  }
+}
+#projects-modal{
+  display: none;
+  position: fixed;
+  z-index: 1; 
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9);
+}
+.projects-modal-container{
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 900px;
+  max-height: 1000px;
+  border-radius: 5px;
+}
+#desc-image a{
+  margin: 30px auto 15px auto;
+  display: block;
+  background-color: orange;
+  border-radius: 5px;
+  padding: 15px;
+  text-decoration: none;
+  color: white;
+  width: fit-content;
+  &:hover{
+    background-color: rgb(196, 127, 1);
+    transition: 0.5s;
+    cursor: pointer;
+  }
+}
+.projects-modal-container, #desc-image{
+  animation: zoom-image 0.6s 1;
+}
+.close-modal{
+  position: absolute;
+  top: 25px;
+  right: 75px;
+  color: #f1f1f1;
+  font-size: 5rem;
+  font-weight: bold;
+  transition: 0.5s;
+  &:hover{
+    color: rgb(65, 63, 63);
+    cursor: pointer;
+  }
+}
+#link-image{
+  background-color: orange;
+  width: fit-content;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+/*Projects modal end*/
+
+/*contact start*/
+#contact h2{
+  margin: 0;
+  padding-top: 50px;
+  font-size: 3rem;
+  animation: slide-contact-header 0.8s 1;
+}
+.contact-container{
+  margin: 120px auto 20px auto;
+  width: 50rem;
+  height: 20rem;
+  font-size: 1.5rem;
+  color: white;
+  border-radius: 20px;
+  background-color: rgb(48, 46, 46);
+  box-shadow: 0px 0px 30px 5px orange;
+  animation: slide-contact-box 0.8s 1;
+  i{
+    font-size: 3rem;
+    padding-top: 40px;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+    &:hover{
+      color: orange;
+      transition: 0.5s;
+    }
+  }
+}
+/*contact end*/
+
+@keyframes type-text{
+  from
+  {
+    width: 0;
+  }
+  to
+  {
+    width: 520px;
+  }
+}
+@keyframes type-cursor{
+  from
+  {
+    border-right-color: orange;
+  }
+  to
+  {
+    border-right-color: transparent;
+  }
+}
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+@keyframes zoom-image {
+  from
+  {
+    transform:scale(0)
+  }
+  to
+  {
+    transform:scale(1)
+  }
+}
+@media screen and (max-width: 1000px){
+    .navbar{
+      width: 100%;
+      height: auto;
+      position: relative;
+      border-right: none;
+      a{
+        display: none;
+      }
+    }
+    .graphic-box{
+      display: none;
+    }
+    .copyright{
+        display: none;
+    }
+    .mobile-copyright{
+      display: block;
+    }
+    .mobile-button{
+        display: block;
+    }
+    #contact, #projects, #content, #skills, #aboutme{
+      margin: 0;
+    }
+    #content{
+      h1{
+        font-size: 4rem;
+      }
+      h2{
+        font-size: 2.5rem;
+        letter-spacing: 0.2rem;
+        border-right: 0.2rem solid orange;
+      }
+      p{
+        font-size: 1.1rem;
+      }
+    }
+    #contact h2, #projects h2{
+      font-size: 2rem;
+    }
+    .aboutme-container{
+      width: auto;
+      height: auto;
+      font-size: 1rem;
+    }
+    #aboutme{
+      h2{
+        font-size: 2rem;
+      }
+      p{
+        padding: 25px;
+      }
+    } 
+    .contact-container{
+      width: 18rem;
+      height: 17rem;
+      font-size: 1.1rem;     
+    }
+    .projects-column{
+      width: 100%;
+    }
+    #projects{
+      font-size: 1rem;
+    }
+    #skills h2{
+      font-size: 2rem;
+      padding-bottom: 50px;
+    }
+    .skills-square{
+      margin: 0;
+      padding: 0;
+      font-size: 1.1rem;
+      width: 100%;
+      li{
+        margin: 2rem 0;
+        text-align: center;
+        &:before{
+          width: 1.1rem;
+          height: 1.1rem;
+          padding: 1rem;
+          margin-right: auto;
+          margin-left: auto;
+          display: block;
+          margin-bottom: 10px;
+        }   
+      }
+    }
+    .skills-icons{
+      font-size: 7rem;
+    }
+    .personal-icons{
+      width: 100%;
+      margin-top: 20px;
+      i{
+        font-size: 3rem;
+      }
+    }
+    .cert{
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      img{
+        width: 150px;
+        height: 190px;
+      }
+    }
+    .skills-modal-container{
+      width: 80%;
+      max-width: 400px;
+      height: auto;
+    }
+    .close-modal{
+      top: 5px;
+      right: 15px;
+    }
+    @keyframes slide-navbar{
+      0%{
+        top: -7%;
+      }
+      100%{
+        top: 0;
+      }
+    }
+    @keyframes slide-contact-header{
+      0%{
+        top: -5%;
+        font-size: 0rem;
+      }
+      100%{
+        top: 15%;
+        font-size: 2rem;
+      }
+    }
+    @keyframes type-text{
+      from
+      {
+        width: 0;
+      }
+      to
+      {
+        width: 270px;
+      }
+    }
+}

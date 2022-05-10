@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WZZ73WY5MC"></script>
@@ -14,34 +13,33 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
   </head>
-  <body onload="getYear()">
+  <body>
     <div class="graphic-box">
       <div class="graphic-block"></div>
     </div>
     <div class="navbar">
-        <a href="javascript:void(0);" onclick="openPortfolio()">Portfolio</a>
-        <a href="javascript:void(0);" onclick="openAboutMe()">O mnie</a>
-        <a href="javascript:void(0);" onclick="openSkills()">Umiejętności</a>
-        <a href="javascript:void(0);" onclick="openProjects()">Projekty</a>
-        <a href="javascript:void(0);" onclick="openContact()">Kontakt</a>
-        <span class="mobile-button" onclick="openMobile()">&#9776;</span>
+        <a href="javascript:void(0);" class="nav-element" id="openPortfolio">Portfolio</a>
+        <a href="javascript:void(0);" class="nav-element" id="openAboutMe">O mnie</a>
+        <a href="javascript:void(0);" class="nav-element" id="openSkills">Umiejętności</a>
+        <a href="javascript:void(0);" class="nav-element" id="openProjects">Projekty</a>
+        <a href="javascript:void(0);" class="nav-element" id="openContact">Kontakt</a>
+        <span class="mobile-button" id="open-mobile">&#9776;</span>
         <div class="copyright">
           <a href="https://github.com/rnycz" target="_blank"><i class="fab fa-github"></i></a>           
-          <p id="year1"></p>
+          <p class="year"></p>
           &copy; Radosław Nycz
         </div>
     </div>
     <div id="mobile" class="mobile-nav">
-        <a href="javascript:void(0)" class="closebtn-mobile" onclick="closeMobile()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn-mobile" id="close-mobile">&times;</a>
         <div class="mobile-nav-content">
-          <a href="javascript:void(0);" class="isClicked" onclick="openPortfolio()">Portfolio</a>
-          <a href="javascript:void(0);" class="isClicked" onclick="openAboutMe()">O mnie</a>
-          <a href="javascript:void(0);" class="isClicked" onclick="openSkills()">Umiejętności</a>
-          <a href="javascript:void(0);" class="isClicked" onclick="openProjects()">Projekty</a>
-          <a href="javascript:void(0);" class="isClicked" onclick="openContact()">Kontakt</a>
+          <a href="javascript:void(0);" class="nav-element-mobile" id="openPortfolio-Mobile">Portfolio</a>
+          <a href="javascript:void(0);" class="nav-element-mobile" id="openAboutMe-Mobile">O mnie</a>
+          <a href="javascript:void(0);" class="nav-element-mobile" id="openSkills-Mobile">Umiejętności</a>
+          <a href="javascript:void(0);" class="nav-element-mobile" id="openProjects-Mobile">Projekty</a>
+          <a href="javascript:void(0);" class="nav-element-mobile" id="openContact-Mobile">Kontakt</a>
         </div>
       </div>
       <div class="wrapper">
@@ -110,7 +108,7 @@
           </div>
           <p>Naciśnij na obrazek, aby poznać szczegóły.</p>
           <div id="skills-modal">
-            <span class="close-modal" onclick="closeModalSkills()">&times;</span>       
+            <span class="close-modal" id="close-modal-skills">&times;</span>       
             <img class="skills-modal-container" id="cert">
             <div id="desc-cert"></div>
           </div>     
@@ -184,7 +182,7 @@
           <h3>Więcej na moim profilu <a href="https://github.com/rnycz" target="_blank">GitHub</a></h3>            
 
           <div id="projects-modal">
-            <span class="close-modal" onclick="closeModalProjects()">&times;</span>       
+            <span class="close-modal" id="close-modal-projects">&times;</span>       
             <img class="projects-modal-container" id="image">
             <div id="desc-image"></div>
           </div>
@@ -202,13 +200,13 @@
           <h1>HELLO</h1>         
           <h2>Radosław Nycz</h2>
           <p><i>Junior Frontend Developer</i></p>
-
         </div>
       </div>
     <div class="mobile-copyright">
-      <span id="year2"></span>
+      <span class="year"></span>
       &copy; Radosław Nycz
     </div>
+
+    <script src="script.js"></script>
   </body>
- 
 </html>

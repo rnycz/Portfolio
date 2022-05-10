@@ -1,116 +1,94 @@
-function getYear(){
-    var date = new Date();
-    var year = date.getFullYear();
-    document.getElementById("year1").innerHTML = year;
-    document.getElementById("year2").innerHTML = year;
+const getYear = () =>{
+    const date = new Date();
+    const year = date.getFullYear();
+    const yearArray = document.querySelectorAll(".year");
+    for(const el of yearArray){
+        el.innerHTML = year;
+    }
 }
-
-function openPortfolio(){
-    location.reload();
-}
-function openAboutMe(){
-    var content = document.getElementById("content");
-    var skills = document.getElementById("skills");
-    var projects = document.getElementById("projects");
-    var contact = document.getElementById("contact");
-
-    var aboutme = document.getElementById("aboutme");
-    content.style.display = "none";
-    skills.style.display = "none";
-    projects.style.display = "none";
-    contact.style.display = "none";
-    aboutme.style.display = "block";
-    closeMobile();
-}
-function openSkills(){
-    var content = document.getElementById("content");
-    var aboutme = document.getElementById("aboutme");
-    var projects = document.getElementById("projects");
-    var contact = document.getElementById("contact");
-
-    var skills = document.getElementById("skills");
-    content.style.display = "none";
-    projects.style.display = "none";
-    contact.style.display = "none";
-    aboutme.style.display = "none";
-    skills.style.display = "block";
-    closeMobile();
-}
-function openProjects(){
-    var content = document.getElementById("content");
-    var aboutme = document.getElementById("aboutme");
-    var contact = document.getElementById("contact");
-    var skills = document.getElementById("skills");
-
-    var projects = document.getElementById("projects");
-    content.style.display = "none";
-    contact.style.display = "none";
-    aboutme.style.display = "none";
-    skills.style.display = "none";
-    projects.style.display = "block";
-    closeMobile();
-}
-function openContact(){
-    var content = document.getElementById("content");
-    var aboutme = document.getElementById("aboutme");
-    var skills = document.getElementById("skills");
-    var projects = document.getElementById("projects");
-
-    var contact = document.getElementById("contact");
-    content.style.display = "none";
-    aboutme.style.display = "none";
-    skills.style.display = "none";
-    projects.style.display = "none";
-    contact.style.display = "block";
-    closeMobile();
-}
-
-function openMobile() {
-    document.getElementById("mobile").style.width = "100%";
-  }
+getYear();
   
-function closeMobile() {
-    document.getElementById("mobile").style.width = "0%";
+const closeMobile = () =>{
+    document.querySelector("#mobile").style.width = "0%";
 }
 
-function openModalProjects(){
-    var images = document.getElementsByClassName("projects-image");
-    var modal = document.getElementById("projects-modal");
-    var modalImg = document.getElementById("image");
-    var descText = document.getElementById("desc-image");
+document.querySelector("#close-mobile").addEventListener("click", () =>{
+    closeMobile();
+});
 
-    for(var i = 0; i<images.length; i++){ 
-        images[i].onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            descText.innerHTML = "<a href='"+this.alt+"' target='_blank'>Kod żródłowy</a>"
-        }        
-    }
-}
-function openModalSkills(){
-    var images = document.getElementsByClassName("skills-image");
-    var modal = document.getElementById("skills-modal");
-    var modalImg = document.getElementById("cert");
-    var descText = document.getElementById("desc-cert");
+document.querySelector("#open-mobile").addEventListener("click", () =>{
+    document.querySelector("#mobile").style.width = "100%";
+});
 
-    for(var i = 0; i<images.length; i++){ 
-        images[i].onclick = function(){
-            modal.style.display = "block";
-            modalImg.src = this.src;
-            descText.innerHTML = this.alt;
-        }        
-    }
-}
-window.onclick = function(){
-    openModalProjects();
-    openModalSkills();
-}
-function closeModalProjects(){
-    var modal = document.getElementById("projects-modal");
-    modal.style.display = "none";
-}
-function closeModalSkills(){
-    var modal = document.getElementById("skills-modal");
-    modal.style.display = "none";
+document.querySelector("#openPortfolio").addEventListener("click", () =>{
+    location.reload();
+});
+document.querySelector("#openPortfolio-Mobile").addEventListener("click", () =>{
+    location.reload();
+});
+
+const content = document.getElementById("content");
+const skills = document.getElementById("skills");
+const projects = document.getElementById("projects");
+const contact = document.getElementById("contact");
+const aboutme = document.getElementById("aboutme");
+const divArray = [content, skills, projects, contact, aboutme];
+
+const navElement = document.querySelectorAll(".nav-element");
+for(const el of navElement || navElementMobile){
+    el.addEventListener("click", () =>{
+        for(const div of divArray){
+            div.style.display = "none";
+            if(el.id.substring(4).toLowerCase() === div.id){
+                div.style.display = "block";
+            }
+        }
+        closeMobile();
+    });
 }
 
+const navElementMobile = document.querySelectorAll(".nav-element-mobile");
+for(const el of navElementMobile){
+    el.addEventListener("click", () =>{
+        const position = el.id.indexOf("-");
+        for(const div of divArray){
+            div.style.display = "none";
+            if(el.id.substring(4, position).toLowerCase() === div.id){
+                div.style.display = "block";
+            }
+        }
+        closeMobile();
+    });
+}
+
+const projectsImages = document.querySelectorAll(".projects-image");
+const projectsModal = document.querySelector("#projects-modal");
+const projectsModalImg = document.querySelector("#image");
+const projectsDescText = document.querySelector("#desc-image");
+for(const el of projectsImages){
+    el.addEventListener("click", () =>{
+        projectsModal.style.display = "block";
+        projectsModalImg.src = el.src;
+        projectsDescText.innerHTML = `<a href='${el.alt}' target='_blank'>Kod żródłowy</a>`; 
+    });
+}
+
+const skillsImages = document.querySelectorAll(".skills-image");
+const skillsModal = document.querySelector("#skills-modal");
+const skillsModalImg = document.querySelector("#cert");
+const skillsDescText = document.querySelector("#desc-cert");
+for(const el of skillsImages){
+    el.addEventListener("click", () =>{
+        skillsModal.style.display = "block";
+        skillsModalImg.src = el.src;
+        skillsDescText.innerHTML = el.alt;
+    });
+}
+
+document.querySelector("#close-modal-projects").addEventListener("click", () =>{
+    document.querySelector("#projects-modal").style.display = "none";
+});
+
+document.querySelector("#close-modal-skills").addEventListener("click", () =>{
+    document.querySelector("#skills-modal").style.display = "none";
+});
