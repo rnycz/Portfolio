@@ -412,8 +412,7 @@ body {
 .projects-modal-container{
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 900px;
+  max-width: 800px;
   max-height: 1000px;
   border-radius: 5px;
 }
@@ -605,6 +604,10 @@ body {
     #projects{
       font-size: 1rem;
     }
+    .projects-modal-container{
+      width: 80%;
+      max-width: 500px;
+    }
     #skills h2{
       font-size: 2rem;
       padding-bottom: 50px;
@@ -648,7 +651,7 @@ body {
       }
     }
     .skills-modal-container{
-      width: 80%;
+      width: 70%;
       max-width: 400px;
       height: auto;
     }
